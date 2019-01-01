@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://LiweijianWeb.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://LiweijianWeb.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://LiweijianWeb.com/">
+      <s:element name="GetGroupIdsByKnapsacks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="values" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="capacities" type="tns:ArrayOfLong" />
+            <s:element minOccurs="1" maxOccurs="1" name="scaleNum" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetGroupIdsByKnapsacksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupIdsByKnapsacksResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetGroupIdsByKnapsacksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupIdsByKnapsacks" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupIdsByKnapsacksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupIdsByKnapsacksResponse" />
+  </wsdl:message>
+  <wsdl:portType name="KnapsacksServiceSoap">
+    <wsdl:operation name="GetGroupIdsByKnapsacks">
+      <wsdl:input message="tns:GetGroupIdsByKnapsacksSoapIn" />
+      <wsdl:output message="tns:GetGroupIdsByKnapsacksSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="KnapsacksServiceSoap" type="tns:KnapsacksServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGroupIdsByKnapsacks">
+      <soap:operation soapAction="http://LiweijianWeb.com/GetGroupIdsByKnapsacks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="KnapsacksServiceSoap12" type="tns:KnapsacksServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetGroupIdsByKnapsacks">
+      <soap12:operation soapAction="http://LiweijianWeb.com/GetGroupIdsByKnapsacks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="KnapsacksService">
+    <wsdl:port name="KnapsacksServiceSoap" binding="tns:KnapsacksServiceSoap">
+      <soap:address location="http://101.132.130.88/VSTO%E6%8F%92%E4%BB%B6/WebService/KnapsacksService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="KnapsacksServiceSoap12" binding="tns:KnapsacksServiceSoap12">
+      <soap12:address location="http://101.132.130.88/VSTO%E6%8F%92%E4%BB%B6/WebService/KnapsacksService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

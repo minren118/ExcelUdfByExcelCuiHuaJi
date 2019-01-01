@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FD906055-F950-44AF-BD7D-39EEE7A96276}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExcelCuiHuaJi</RootNamespace>
+    <AssemblyName>ExcelUDF</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ChineseConverter, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9ecab500adebae88, processorArchitecture=MSIL">
+      <HintPath>..\packages\ChineseConverter.1.0.0\lib\net20\ChineseConverter.dll</HintPath>
+    </Reference>
+    <Reference Include="ChnCharInfo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=18f031bd02e5e291, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.International.Converters.PinYinConverter.1.0.0\lib\ChnCharInfo.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDna.Integration, Version=0.34.6373.42344, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.Integration.0.34.6\lib\ExcelDna.Integration.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExcelDna.IntelliSense, Version=1.0.3.31546, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDna.IntelliSense.1.0.3\lib\net40\ExcelDna.IntelliSense.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPinyin, Version=0.2.6321.26573, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPinyin.0.2.6321.26573\lib\net20\NPinyin.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\portable-net40+sl4+win8+wp8\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIn.cs" />
+    <Compile Include="ArrayResizer.cs" />
+    <Compile Include="Connected Services\KnapsacksService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="IndividualIncomeTax.cs" />
+    <Compile Include="FuZhu.cs" />
+    <Compile Include="LookupReference.cs" />
+    <Compile Include="GroupCal.cs" />
+    <Compile Include="Other.cs" />
+    <Compile Include="Sequence.cs" />
+    <Compile Include="UnitConversion.cs" />
+    <Compile Include="DateTimeReference.cs" />
+    <Compile Include="IDCard.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Solver.cs" />
+    <Compile Include="Common.cs" />
+    <Compile Include="Conversions.cs" />
+    <Compile Include="ChineseReference.cs" />
+    <Compile Include="CustomerExtentions\DnaExtentions.cs" />
+    <Compile Include="CustomerExtentions\ExcelReferenceExtentions.cs" />
+    <Compile Include="RangeSetUtility.cs" />
+    <Compile Include="Security.cs" />
+    <Compile Include="IoUtility.cs" />
+    <Compile Include="LogicUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random.cs" />
+    <Compile Include="RegexUtility.cs" />
+    <Compile Include="Ribbon1.cs" />
+    <Compile Include="ExcelObjectProp.cs" />
+    <Compile Include="StringUtility.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\KnapsacksService\ExcelCuiHuaJi.KnapsacksService.ArrayOfAnyType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\KnapsacksService\KnapsacksService.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\ExcelDna.Build.props" />
+    <None Include="ExcelUDF-AddIn.dna">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\KnapsacksService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KnapsacksService\KnapsacksService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KnapsacksService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KnapsacksService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\KnapsacksService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\行政区划数据库.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDna.xll" "$(TargetDir)ExcelUDF-AddIn.xll*" /C /Y
+xcopy "$(TargetDir)ExcelUDF-AddIn.dna*" "$(TargetDir)ExcelUDF-AddIn64.dna*" /C /Y
+xcopy "$(SolutionDir)\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDna64.xll" "$(TargetDir)ExcelUDF-AddIn64.xll*" /C /Y
+"$(SolutionDir)\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDnaPack.exe" "$(TargetDir)ExcelUDF-AddIn.dna" /Y
+"$(SolutionDir)\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDnaPack.exe" "$(TargetDir)ExcelUDF-AddIn64.dna" /Y</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDna.AddIn.targets" Condition="Exists('..\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDna.AddIn.targets')" />
+  <Target Name="EnsureExcelDnaTargetsImported" BeforeTargets="BeforeBuild" Condition="'$(ExcelDnaTargetsImported)' == ''">
+    <Error Condition="!Exists('..\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDna.AddIn.targets') And ('$(RunExcelDnaBuild)' != '' And $(RunExcelDnaBuild))" Text="You are trying to build with ExcelDna, but the NuGet targets file that ExcelDna depends on is not available on this computer. This is probably because the ExcelDna package has not been committed to source control, or NuGet Package Restore is not enabled. Please enable NuGet Package Restore to download them. For more information, see http://go.microsoft.com/fwlink/?LinkID=317567." HelpKeyword="BCLBUILD2001" />
+    <Error Condition="Exists('..\packages\ExcelDna.AddIn.0.34.6\tools\ExcelDna.AddIn.targets') And ('$(RunExcelDnaBuild)' != '' And $(RunExcelDnaBuild))" Text="ExcelDna cannot be run because NuGet packages were restored prior to the build running, and the targets file was unavailable when the build started. Please build the project again to include these packages in the build. You may also need to make sure that your build server does not delete packages prior to each build. For more information, see http://go.microsoft.com/fwlink/?LinkID=317568." HelpKeyword="BCLBUILD2002" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

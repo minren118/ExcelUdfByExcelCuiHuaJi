@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://101.132.130.88/VSTO插件/WebService/KnapsacksService.asmx?wsdl" docRef="http://101.132.130.88/VSTO插件/WebService/KnapsacksService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://101.132.130.88/VSTO%E6%8F%92%E4%BB%B6/WebService/KnapsacksService.asmx" xmlns:q1="http://LiweijianWeb.com/" binding="q1:KnapsacksServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://101.132.130.88/VSTO%E6%8F%92%E4%BB%B6/WebService/KnapsacksService.asmx" xmlns:q2="http://LiweijianWeb.com/" binding="q2:KnapsacksServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>
